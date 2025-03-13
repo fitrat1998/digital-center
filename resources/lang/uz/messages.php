@@ -67,6 +67,65 @@ return [
         'department_view'   => 'Bo\'limni ko\'rish',
     ],
 
+    'staff' => [
+        'fullname'   => 'Fish',
+        'photo'      => 'Rasm',
+        'position'   => 'Lavozim',
+        'department' => 'Bo\'lim',
+    ],
+
+    'slider' => [
+        'title'     => 'Sarlavha',
+        'caption'   => 'Izoh',
+        'photo'     => 'Rasm',
+    ],
+
+    'software_category' => [
+        'name'       => 'Nomi'
+    ],
+
+    'position' => [
+        'name'       => 'Nomi'
+    ],
+
+    'software' => [
+        'name'          => 'Nomi',
+        'description'   => 'Tavsif',
+        'photo'         =>'Rasm',
+    ],
+
+    'project' => [
+         'name'          => 'Nomi',
+         'description'   => 'Tavsif',
+         'photo'         =>'Rasm',
+    ],
+
+    'news' => [
+         'title'          => 'Sarlavha',
+         'description'    => 'Tavsif',
+         'photo'          =>'Rasm',
+         'user_id'        =>'Kim tomonidan kiritilgan',
+    ],
+
+    'ads' => [
+         'title'          => 'Sarlavha',
+         'description'    => 'Tavsif',
+         'photo'          =>'Rasm',
+         'user_id'        =>'Kim tomonidan kiritilgan',
+    ],
+
+    'request' => [
+        'fullname'      => "Fish",
+        'department'    => 'Bo\'lim',
+        'file'          => 'Fayl',
+        'text'          => 'Xabar',
+        'faculty'       => 'Fakultet yoki Tashkilot',
+    ],
+
+
+
+
+
 
 
 ];

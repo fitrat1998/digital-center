@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Request extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'fullname',
-        'photo',
-        'position_id',
+        'department_id',
+        'text',
+        'file',
+        'faculty',
     ];
 }

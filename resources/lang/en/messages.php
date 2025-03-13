@@ -66,4 +66,60 @@ return [
         'department_delete' => 'Delete Departments',
         'department_view'   => 'View Departments',
     ],
+
+    'staff' => [
+    'fullname'   => 'Full Name',
+    'photo'      => 'Photo',
+    'position'   => 'Position',
+    'department' => 'Department',
+    ],
+
+    'slider' => [
+        'title'     => 'Title',
+        'caption'   => 'Caption',
+        'photo'     => 'Photo',
+    ],
+
+    'software_category' => [
+        'name'       => 'Name',
+    ],
+
+    'position' => [
+        'name'       => 'Name',
+    ],
+
+    'software' => [
+        'name'          => 'Name',
+        'description'   => 'Description',
+        'photo'         => 'Photo',
+    ],
+
+    'project' => [
+        'name'          => 'Name',
+        'description'   => 'Description',
+        'photo'         => 'Photo',
+    ],
+
+    'news' => [
+        'title'         => 'Title',
+        'description'   => 'Description',
+        'photo'         => 'Photo',
+        'user_id'       => 'Entered by',
+    ],
+
+    'ads' => [
+        'title'         => 'Title',
+        'description'   => 'Description',
+        'photo'         => 'Photo',
+        'user_id'       => 'Entered by',
+    ],
+
+    'request' => [
+        'fullname'      => 'Full Name',
+        'department'    => 'Department',
+        'file'          => 'File',
+        'text'          => 'Message',
+        'faculty'       => 'Faculty or Organization',
+    ],
+
 ];

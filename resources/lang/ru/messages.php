@@ -67,4 +67,60 @@ return [
         'department_view'   => 'Просмотр отдела',
     ],
 
+    'staff' => [
+    'fullname'   => 'ФИО',
+    'photo'      => 'Фото',
+    'position'   => 'Должность',
+    'department' => 'Отдел',
+    ],
+
+    'slider' => [
+        'title'     => 'Заголовок',
+        'caption'   => 'Описание',
+        'photo'     => 'Фото',
+    ],
+
+    'software_category' => [
+        'name'       => 'Название',
+    ],
+
+    'position' => [
+        'name'       => 'Название',
+    ],
+
+    'software' => [
+        'name'          => 'Название',
+        'description'   => 'Описание',
+        'photo'         => 'Фото',
+    ],
+
+    'project' => [
+        'name'          => 'Название',
+        'description'   => 'Описание',
+        'photo'         => 'Фото',
+    ],
+
+    'news' => [
+        'title'         => 'Заголовок',
+        'description'   => 'Описание',
+        'photo'         => 'Фото',
+        'user_id'       => 'Кем добавлено',
+    ],
+
+    'ads' => [
+        'title'         => 'Заголовок',
+        'description'   => 'Описание',
+        'photo'         => 'Фото',
+        'user_id'       => 'Кем добавлено',
+    ],
+
+    'request' => [
+        'fullname'      => 'ФИО',
+        'department'    => 'Отдел',
+        'file'          => 'Файл',
+        'text'          => 'Сообщение',
+        'faculty'       => 'Факультет или Организация',
+    ],
+
+
 ];
