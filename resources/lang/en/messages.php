@@ -26,6 +26,11 @@ return [
     'success_role_delete'          => 'Role deleted successfully',
     'success_permission_delete'    => 'Permission deleted successfully',
 
+    'success_department_add'      => 'Department successfully added',
+    'success_department_edit'     => 'Department successfully edited',
+    'success_department_delete'   => 'Department successfully deleted',
+
+
     'lang' => [
         'title' => 'Choose language',
         'uz'    => 'Uzbek',
@@ -61,65 +66,66 @@ return [
 
     'departments' => [
         'title'             => 'Departments',
+        'name'              => 'Name',
         'department_create' => 'Add Departments',
         'department_edit'   => 'Edit Departments',
         'department_delete' => 'Delete Departments',
         'department_view'   => 'View Departments',
     ],
 
-    'staff' => [
-    'fullname'   => 'Full Name',
-    'photo'      => 'Photo',
-    'position'   => 'Position',
-    'department' => 'Department',
-    ],
+    'staffs' => [
+        'fullname'   => 'Full Name',
+        'photo'      => 'Photo',
+        'position'   => 'Position',
+        'department' => 'Department',
+        ],
 
-    'slider' => [
-        'title'     => 'Title',
-        'caption'   => 'Caption',
-        'photo'     => 'Photo',
-    ],
+        'sliders' => [
+            'title'     => 'Title',
+            'caption'   => 'Caption',
+            'photo'     => 'Photo',
+        ],
 
-    'software_category' => [
-        'name'       => 'Name',
-    ],
+        'software_categories' => [
+            'name'       => 'Name',
+        ],
 
-    'position' => [
-        'name'       => 'Name',
-    ],
+        'positions' => [
+            'name'       => 'Name',
+        ],
 
-    'software' => [
-        'name'          => 'Name',
-        'description'   => 'Description',
-        'photo'         => 'Photo',
-    ],
+        'softwares' => [
+            'name'          => 'Name',
+            'description'   => 'Description',
+            'photo'         => 'Photo',
+        ],
 
-    'project' => [
-        'name'          => 'Name',
-        'description'   => 'Description',
-        'photo'         => 'Photo',
-    ],
+        'projects' => [
+            'name'          => 'Name',
+            'description'   => 'Description',
+            'photo'         => 'Photo',
+        ],
 
-    'news' => [
-        'title'         => 'Title',
-        'description'   => 'Description',
-        'photo'         => 'Photo',
-        'user_id'       => 'Entered by',
-    ],
+        'news' => [
+            'title'         => 'Title',
+            'description'   => 'Description',
+            'photo'         => 'Photo',
+            'user_id'       => 'Entered by',
+        ],
 
-    'ads' => [
-        'title'         => 'Title',
-        'description'   => 'Description',
-        'photo'         => 'Photo',
-        'user_id'       => 'Entered by',
-    ],
+        'ads' => [
+            'title'         => 'Title',
+            'description'   => 'Description',
+            'photo'         => 'Photo',
+            'user_id'       => 'Entered by',
+        ],
 
-    'request' => [
-        'fullname'      => 'Full Name',
-        'department'    => 'Department',
-        'file'          => 'File',
-        'text'          => 'Message',
-        'faculty'       => 'Faculty or Organization',
-    ],
+        'requests' => [
+            'fullname'      => 'Full Name',
+            'department'    => 'Department',
+            'file'          => 'File',
+            'text'          => 'Message',
+            'faculty'       => 'Faculty or Organization',
+        ],
 
 ];

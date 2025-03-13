@@ -35,7 +35,10 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>{{__('messages.name')}}</th>
+
+                                <th>{{__('messages.departments.name')}} - <img src="{{ asset('uz.png') }}" alt="uz" width="24"></th>
+                                <th>{{__('messages.departments.name')}} - <img src="{{ asset('en.png') }}" alt="en" width="24"></th>
+                                <th>{{__('messages.departments.name')}} - <img src="{{ asset('ru.png') }}" alt="ru" width="24"></th>
 
                                 <th class="w-25">{{__('messages.action')}}</th>
                             </tr>
@@ -44,7 +47,9 @@
                             @foreach($departments as $department)
                                 <tr>
                                     <td>{{ $department->id }}</td>
-                                    <td>{{ $department->name }}</td>
+                                    <td>{{ $department->name_uz }}</td>
+                                    <td>{{ $department->name_en }}</td>
+                                    <td>{{ $department->name_ru }}</td>
                                     <td class="text-center">
                                         @can('user.delete')
                                             <form action="{{ route('departments.destroy', $department->id) }}" method="post">

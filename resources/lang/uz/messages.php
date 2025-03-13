@@ -16,15 +16,22 @@ return [
     'sign_up'                     => 'Ro‘yxatdan o‘tish',
     'remember_me'                 => 'Eslab qolish',
     'forget_password'             => 'Parolni unutdingizmi?',
+
     'success_user_add'            => 'Foydalanuvchi muvvafaqiyatli qo\'shildi',
-    'success_role_add'            => 'Rol muvvafaqiyatli qo\'shildi',
-    'success_permission_add'      => 'Ruxsat muvvafaqiyatli qo\'shildi',
     'success_user_edit'           => 'Foydalanuvchi muvvafaqiyatli tahrirlandi',
-    'success_role_edit'           => 'Rol muvvafaqiyatli tahrirlandi',
-    'success_permission_edit'     => 'Ruxsat muvvafaqiyatli tahrirlandi',
     'success_user_delete'         => 'Foydalanuvchi muvvafaqiyatli o\'chirildi',
+
+    'success_role_add'            => 'Rol muvvafaqiyatli qo\'shildi',
+    'success_role_edit'           => 'Rol muvvafaqiyatli tahrirlandi',
     'success_role_delete'         => 'Rol muvvafaqiyatli o\'chirildi',
+
+    'success_permission_add'      => 'Ruxsat muvvafaqiyatli qo\'shildi',
+    'success_permission_edit'     => 'Ruxsat muvvafaqiyatli tahrirlandi',
     'success_permission_delete'   => 'Ruxsat muvvafaqiyatli o\'chirildi',
+
+    'success_department_add'      => 'Bo`lim muvvafaqiyatli qo\'shildi',
+    'success_department_edit'     => 'Bo`lim muvvafaqiyatli tahrirlandi',
+    'success_department_delete'   => 'Bo`lim muvvafaqiyatli o\'chirildi',
 
     'lang' => [
         'title' => 'Tilni tanlash',
@@ -61,40 +68,41 @@ return [
 
     'departments' => [
         'title'             => 'Bo\'limlar',
+        'name'              => 'Nomi',
         'department_create' => 'Bo\'lim qo\'shish',
         'department_edit'   => 'Bo\'limni tahrirlash',
         'department_delete' => 'Bo\'limni o\'chirish',
         'department_view'   => 'Bo\'limni ko\'rish',
     ],
 
-    'staff' => [
+    'staffs' => [
         'fullname'   => 'Fish',
         'photo'      => 'Rasm',
         'position'   => 'Lavozim',
         'department' => 'Bo\'lim',
     ],
 
-    'slider' => [
+    'sliders' => [
         'title'     => 'Sarlavha',
         'caption'   => 'Izoh',
         'photo'     => 'Rasm',
     ],
 
-    'software_category' => [
+    'software_categories' => [
         'name'       => 'Nomi'
     ],
 
-    'position' => [
+    'positions' => [
         'name'       => 'Nomi'
     ],
 
-    'software' => [
+    'softwares' => [
         'name'          => 'Nomi',
         'description'   => 'Tavsif',
         'photo'         =>'Rasm',
     ],
 
-    'project' => [
+    'projects' => [
          'name'          => 'Nomi',
          'description'   => 'Tavsif',
          'photo'         =>'Rasm',
@@ -114,7 +122,7 @@ return [
          'user_id'        =>'Kim tomonidan kiritilgan',
     ],
 
-    'request' => [
+    'requests' => [
         'fullname'      => "Fish",
         'department'    => 'Bo\'lim',
         'file'          => 'Fayl',

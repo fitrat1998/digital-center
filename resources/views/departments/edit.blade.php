@@ -34,11 +34,28 @@
                         <form action="{{ route('departments.update',$department->id) }}" method="post">
                             @csrf
                             @method('PUT')
+
                             <div class="form-group">
-                                <label>{{__('messages.name')}}</label>
-                                <input type="text" name="name" class="form-control {{ $errors->has('name') ? "is-invalid":"" }}" value="{{ old('name',$department->name) }}" required>
-                                @if($errors->has('name'))
-                                    <span class="error invalid-feedback">{{ $errors->first('name') }}</span>
+                                <label>{{__('messages.name')}} - <img src="{{ asset('uz.png') }}" alt="uz" width="24"></label>
+                                <input type="text" name="name_uz" class="form-control {{ $errors->has('name_uz') ? "is-invalid":"" }}" value="{{ old('name_uz',$department->name_uz) }}" required>
+                                @if($errors->has('name_uz'))
+                                    <span class="error invalid-feedback">{{ $errors->first('name_uz') }}</span>
+                                @endif
+                            </div>
+
+                             <div class="form-group">
+                                <label>{{__('messages.name')}} - <img src="{{ asset('en.png') }}" alt="uz" width="24"></label>
+                                <input type="text" name="name_en" class="form-control {{ $errors->has('name_en') ? "is-invalid":"" }}" value="{{ old('name_en',$department->name_en) }}" required>
+                                @if($errors->has('name_en'))
+                                    <span class="error invalid-feedback">{{ $errors->first('name_en') }}</span>
+                                @endif
+                            </div>
+
+                             <div class="form-group">
+                                <label>{{__('messages.name')}} - <img src="{{ asset('ru.png') }}" alt="uz" width="24"></label>
+                                <input type="text" name="name_ru" class="form-control {{ $errors->has('name_ru') ? "is-invalid":"" }}" value="{{ old('name_ru',$department->name_ru) }}" required>
+                                @if($errors->has('name_ru'))
+                                    <span class="error invalid-feedback">{{ $errors->first('name_ru') }}</span>
                                 @endif
                             </div>
 

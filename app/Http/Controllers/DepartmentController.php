@@ -39,12 +39,18 @@ class DepartmentController extends Controller
     {
         abort_if_forbidden('user.add');
 
+//        dd($request);
+
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
+            'name_uz' => ['required', 'string', 'max:255'],
+            'name_en' => ['required', 'string', 'max:255'],
+            'name_ru' => ['required', 'string', 'max:255'],
         ]);
 
         $department = Department::create([
-            'name' => $request->name,
+            'name_uz' => $request->name_uz,
+            'name_en' => $request->name_en,
+            'name_ru' => $request->name_ru,
         ]);
 
         return redirect()->route('departments.index')->with('success', __('messages.success_department_add'));
@@ -88,14 +94,17 @@ class DepartmentController extends Controller
         abort_if((!auth()->user()->can('user.edit') && auth()->id() != $id), 403);
 
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-
+            'name_uz' => ['required', 'string', 'max:255'],
+            'name_en' => ['required', 'string', 'max:255'],
+            'name_ru' => ['required', 'string', 'max:255'],
         ]);
 
         $department = Department::find($id);
 
         $department->update([
-            'name' => $request->name,
+            'name_uz' => $request->name_uz,
+            'name_en' => $request->name_en,
+            'name_ru' => $request->name_ru,
         ]);
 
         return redirect()->route('departments.index')->with('success', __('messages.success_department_edit'));

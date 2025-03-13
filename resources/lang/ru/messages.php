@@ -26,6 +26,11 @@ return [
     'success_role_delete'         => 'Роль успешно удалена',
     'success_permission_delete'   => 'Разрешение успешно удалено',
 
+    'success_department_add'      => 'Отдел успешно добавлен',
+    'success_department_edit'     => 'Отдел успешно отредактирован',
+    'success_department_delete'   => 'Отдел успешно удалён',
+
+
     'lang' => [
         'title' => 'Выберите язык',
         'uz'    => 'Узбекский',
@@ -60,67 +65,68 @@ return [
     ],
 
     'departments' => [
-        'title'             => 'Отделы',
+        'title'             => 'Отделы ',
+        'name'              => 'Название',
         'department_create' => 'Добавить отдел',
         'department_edit'   => 'Редактировать отдел',
         'department_delete' => 'Удалить отдел',
         'department_view'   => 'Просмотр отдела',
     ],
 
-    'staff' => [
-    'fullname'   => 'ФИО',
-    'photo'      => 'Фото',
-    'position'   => 'Должность',
-    'department' => 'Отдел',
-    ],
+    'staffs' => [
+        'fullname'   => 'ФИО',
+        'photo'      => 'Фото',
+        'position'   => 'Должность',
+        'department' => 'Отдел',
+        ],
 
-    'slider' => [
-        'title'     => 'Заголовок',
-        'caption'   => 'Описание',
-        'photo'     => 'Фото',
-    ],
+        'sliders' => [
+            'title'     => 'Заголовок',
+            'caption'   => 'Описание',
+            'photo'     => 'Фото',
+        ],
 
-    'software_category' => [
-        'name'       => 'Название',
-    ],
+        'software_categories' => [
+            'name'       => 'Название',
+        ],
 
-    'position' => [
-        'name'       => 'Название',
-    ],
+        'positions' => [
+            'name'       => 'Название',
+        ],
 
-    'software' => [
-        'name'          => 'Название',
-        'description'   => 'Описание',
-        'photo'         => 'Фото',
-    ],
+        'softwares' => [
+            'name'          => 'Название',
+            'description'   => 'Описание',
+            'photo'         => 'Фото',
+        ],
 
-    'project' => [
-        'name'          => 'Название',
-        'description'   => 'Описание',
-        'photo'         => 'Фото',
-    ],
+        'projects' => [
+            'name'          => 'Название',
+            'description'   => 'Описание',
+            'photo'         => 'Фото',
+        ],
 
-    'news' => [
-        'title'         => 'Заголовок',
-        'description'   => 'Описание',
-        'photo'         => 'Фото',
-        'user_id'       => 'Кем добавлено',
-    ],
+        'news' => [
+            'title'         => 'Заголовок',
+            'description'   => 'Описание',
+            'photo'         => 'Фото',
+            'user_id'       => 'Кем добавлено',
+        ],
 
-    'ads' => [
-        'title'         => 'Заголовок',
-        'description'   => 'Описание',
-        'photo'         => 'Фото',
-        'user_id'       => 'Кем добавлено',
-    ],
+        'ads' => [
+            'title'         => 'Заголовок',
+            'description'   => 'Описание',
+            'photo'         => 'Фото',
+            'user_id'       => 'Кем добавлено',
+        ],
 
-    'request' => [
-        'fullname'      => 'ФИО',
-        'department'    => 'Отдел',
-        'file'          => 'Файл',
-        'text'          => 'Сообщение',
-        'faculty'       => 'Факультет или Организация',
-    ],
+        'requests' => [
+            'fullname'      => 'ФИО',
+            'department'    => 'Отдел',
+            'file'          => 'Файл',
+            'text'          => 'Сообщение',
+            'faculty'       => 'Факультет или Организация',
+        ],
 
 
 ];

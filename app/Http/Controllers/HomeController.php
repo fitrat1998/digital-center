@@ -12,7 +12,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $user = auth()->user();
+
+        if ($user->hasRole('super admin')) {
+            return view('adminsuper.index');
+        }
+        elseif ($user->hasRole('admin')) {
+            return view('admin.index');
+        }
+
+        return view('dashboard');
+
     }
 
     /**

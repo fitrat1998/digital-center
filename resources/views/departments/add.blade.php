@@ -34,12 +34,32 @@
                         <form action="{{ route('departments.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <label>{{__('messages.name')}}</label>
-                                <input type="text" name="name"
-                                       class="form-control {{ $errors->has('name') ? "is-invalid":"" }}"
-                                       value="{{ old('name') }}" required>
-                                @if($errors->has('name'))
-                                    <span class="error invalid-feedback">{{ $errors->first('name') }}</span>
+                                <label>{{__('messages.departments.title')}} - <img src="{{ asset('uz.png') }}" alt="uz" width="18"></label>
+                                <input type="text" name="name_uz"
+                                       class="form-control {{ $errors->has('name_uz') ? "is-invalid":"" }}"
+                                       value="{{ old('name_uz') }}" required>
+                                @if($errors->has('name_uz'))
+                                    <span class="error invalid-feedback">{{ $errors->first('name_uz') }}</span>
+                                @endif
+                            </div>
+
+                             <div class="form-group">
+                                <label>{{__('messages.departments.title')}} - <img src="{{ asset('ru.png') }}" alt="uz" width="18"></label>
+                                <input type="text" name="name_en"
+                                       class="form-control {{ $errors->has('name_ru') ? "is-invalid":"" }}"
+                                       value="{{ old('name_ru') }}" required>
+                                @if($errors->has('name_ru'))
+                                    <span class="error invalid-feedback">{{ $errors->first('name_ru') }}</span>
+                                @endif
+                            </div>
+
+                             <div class="form-group">
+                                <label>{{__('messages.departments.title')}} - <img src="{{ asset('en.png') }}" alt="uz" width="18"></label>
+                                <input type="text" name="name_ru"
+                                       class="form-control {{ $errors->has('name_ru') ? "is-invalid":"" }}"
+                                       value="{{ old('name_ru') }}" required>
+                                @if($errors->has('name_ru'))
+                                    <span class="error invalid-feedback">{{ $errors->first('name_ru') }}</span>
                                 @endif
                             </div>
 
