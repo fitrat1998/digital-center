@@ -5,7 +5,6 @@
             <ul class="nav sidebar-toggle nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview"
                 role="menu" data-accordion="true">
 
-                <!-- ✅ Bosh sahifa -->
 
                 <li class="nav-item">
 
@@ -60,7 +59,73 @@
                     </ul>
                 </li>
 
-                <!-- Tilni tanlash bo'limi -->
+
+
+                <li class="nav-item"{{ request()->routeIs('requests.index') ? 'active' : '' }}">
+                <a href="{{ route('requests.index') }}" class="nav-link">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>{{ __('messages.requests.title') }}</span> <span class="badge bg-info">4</span>
+                </a>
+                </li>
+
+
+                <li class="nav-item"{{ request()->routeIs('departments.index') ? 'active' : '' }}">
+                <a href="{{ route('departments.index') }}" class="nav-link">
+                    <i class="fa fa-building"></i>
+                    <span>{{ __('messages.departments.title') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('positions.index') ? 'active' : '' }}">
+                <a href="{{ route('positions.index') }}" class="nav-link">
+                    <i class="fa-brands fa-creative-commons-by"></i>
+                    <span>{{ __('messages.positions.title') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('staffs.index') ? 'active' : '' }}">
+                <a href="{{ route('staffs.index') }}" class="nav-link">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <span>{{ __('messages.staffs.title') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('news.index') ? 'active' : '' }}">
+                <a href="{{ route('news.index') }}" class="nav-link">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>{{ __('messages.news.name') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('ads.index') ? 'active' : '' }}">
+                <a href="{{ route('ads.index') }}" class="nav-link">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>{{ __('messages.ads.name') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('softwarecategories.index') ? 'active' : '' }}">
+                <a href="{{ route('softwarecategories.index') }}" class="nav-link">
+                    <i class="fa-solid fa-list"></i>
+                    <span>{{ __('messages.software_categories.name') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('softwares.index') ? 'active' : '' }}">
+                <a href="{{ route('softwares.index') }}" class="nav-link">
+                    <i class="fa-solid fa-display"></i>
+                    <span>{{ __('messages.softwares.title') }}</span>
+                </a>
+                </li>
+
+                <li class="nav-item"{{ request()->routeIs('sliders.index') ? 'active' : '' }}">
+                <a href="{{ route('sliders.index') }}" class="nav-link">
+                    <i class="fa-solid fa-left-right"></i>
+                    <span>{{ __('messages.sliders.name') }}</span>
+                </a>
+                </li>
+
+                  <!-- Tilni tanlash bo'limi -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-language"></i>
@@ -99,13 +164,6 @@
                     </ul>
                 </li>
 
-                <!-- Departments -->
-                <li class="nav-item"{{ request()->routeIs('departments.index') ? 'active' : '' }}">
-                    <a href="{{ route('departments.index') }}" class="nav-link">
-                        <i class="fa fa-building"></i>
-                        <span>{{ __('messages.departments.title') }}</span>
-                    </a>
-                </li>
 
             </ul>
         @endcanany

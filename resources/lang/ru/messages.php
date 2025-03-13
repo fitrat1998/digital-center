@@ -30,6 +30,23 @@ return [
     'success_department_edit'     => 'Отдел успешно отредактирован',
     'success_department_delete'   => 'Отдел успешно удалён',
 
+    'success_position_add'    => 'Должность успешно добавлена',
+    'success_position_edit'   => 'Должность успешно отредактирована',
+    'success_position_delete' => 'Должность успешно удалена',
+
+    'success_staff_add'    => 'Сотрудник успешно добавлен',
+    'success_staff_edit'   => 'Сотрудник успешно изменён',
+    'success_staff_delete' => 'Сотрудник успешно удалён',
+
+
+
+    'crud' => [
+        'add'    => 'Add',
+        'edit'   => 'Edit',
+        'delete' => 'Delete',
+        'show'   => 'View',
+    ],
+
 
     'lang' => [
         'title' => 'Выберите язык',
@@ -74,6 +91,7 @@ return [
     ],
 
     'staffs' => [
+        'title'      => 'Сотрудники',
         'fullname'   => 'ФИО',
         'photo'      => 'Фото',
         'position'   => 'Должность',
@@ -81,20 +99,23 @@ return [
         ],
 
         'sliders' => [
+            'name'      => 'Слайдер',
             'title'     => 'Заголовок',
             'caption'   => 'Описание',
             'photo'     => 'Фото',
         ],
 
         'software_categories' => [
-            'name'       => 'Название',
+            'name' => 'Категории программ',
         ],
 
         'positions' => [
+            'title'      => 'Должности',
             'name'       => 'Название',
         ],
 
         'softwares' => [
+            'title'         => 'Программы',
             'name'          => 'Название',
             'description'   => 'Описание',
             'photo'         => 'Фото',
@@ -108,6 +129,7 @@ return [
 
         'news' => [
             'title'         => 'Заголовок',
+            'name'          => 'Новости',
             'description'   => 'Описание',
             'photo'         => 'Фото',
             'user_id'       => 'Кем добавлено',
@@ -115,18 +137,31 @@ return [
 
         'ads' => [
             'title'         => 'Заголовок',
+            'name'          => 'Объявления',
             'description'   => 'Описание',
             'photo'         => 'Фото',
             'user_id'       => 'Кем добавлено',
         ],
 
         'requests' => [
+            'title'         => 'Обращения',
             'fullname'      => 'ФИО',
             'department'    => 'Отдел',
             'file'          => 'Файл',
             'text'          => 'Сообщение',
             'faculty'       => 'Факультет или Организация',
         ],
+
+        'validation' => [
+            'department_required' => 'Выберите отдел.',
+            'department_exists'   => 'Такого отдела не существует.',
+            'name_uz_required'    => 'Требуется название на узбекском языке.',
+            'name_en_required'    => 'Требуется название на английском языке.',
+            'name_ru_required'    => 'Требуется название на русском языке.',
+            'string'              => ':attribute должен быть строкой.',
+            'max'                 => ':attribute не должен превышать :max символов.',
+        ],
+        'department_created' => 'Отдел успешно добавлен.',
 
 
 ];

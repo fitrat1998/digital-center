@@ -30,6 +30,23 @@ return [
     'success_department_edit'     => 'Department successfully edited',
     'success_department_delete'   => 'Department successfully deleted',
 
+    'success_position_add'    => 'Position successfully added',
+    'success_position_edit'   => 'Position successfully edited',
+    'success_position_delete' => 'Position successfully deleted',
+
+    'success_staff_add'    => 'Staff successfully added',
+    'success_staff_edit'   => 'Staff successfully updated',
+    'success_staff_delete' => 'Staff successfully deleted',
+
+
+
+    'crud' => [
+        'add'    => 'Добавить',
+        'edit'   => 'Редактировать',
+        'delete' => 'Удалить',
+        'show'   => 'Просмотреть',
+    ],
+
 
     'lang' => [
         'title' => 'Choose language',
@@ -74,6 +91,7 @@ return [
     ],
 
     'staffs' => [
+        'title'      => 'Employees',
         'fullname'   => 'Full Name',
         'photo'      => 'Photo',
         'position'   => 'Position',
@@ -81,20 +99,23 @@ return [
         ],
 
         'sliders' => [
+            'name'      => 'Slider',
             'title'     => 'Title',
             'caption'   => 'Caption',
             'photo'     => 'Photo',
         ],
 
         'software_categories' => [
-            'name'       => 'Name',
+            'name' => 'Software Categories',
         ],
 
         'positions' => [
+            'title'      => 'Positions',
             'name'       => 'Name',
         ],
 
         'softwares' => [
+            'title'         => 'Software',
             'name'          => 'Name',
             'description'   => 'Description',
             'photo'         => 'Photo',
@@ -108,6 +129,7 @@ return [
 
         'news' => [
             'title'         => 'Title',
+            'name'          => 'News',
             'description'   => 'Description',
             'photo'         => 'Photo',
             'user_id'       => 'Entered by',
@@ -115,17 +137,30 @@ return [
 
         'ads' => [
             'title'         => 'Title',
+            'name'          => 'Announcements',
             'description'   => 'Description',
             'photo'         => 'Photo',
             'user_id'       => 'Entered by',
         ],
 
         'requests' => [
+            'title'         => 'Requests',
             'fullname'      => 'Full Name',
             'department'    => 'Department',
             'file'          => 'File',
             'text'          => 'Message',
             'faculty'       => 'Faculty or Organization',
         ],
+
+        'validation' => [
+            'department_required' => 'Department selection is required.',
+            'department_exists'   => 'This department does not exist.',
+            'name_uz_required'    => 'Uzbek name is required.',
+            'name_en_required'    => 'English name is required.',
+            'name_ru_required'    => 'Russian name is required.',
+            'string'              => 'The :attribute must be a string.',
+            'max'                 => 'The :attribute must not exceed :max characters.',
+        ],
+        'department_created' => 'Department successfully created.',
 
 ];

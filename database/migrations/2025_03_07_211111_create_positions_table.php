@@ -12,14 +12,12 @@ return new class extends Migration {
     {
         Schema::create('positions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
             $table->string('name_uz');
             $table->string('name_en');
             $table->string('name_ru');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreignId('department_id')->constrained('departments')->onDelete('cascade');
-
         });
     }
 

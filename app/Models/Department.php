@@ -14,4 +14,9 @@ class Department extends Model
         'name_en',
         'name_ru',
     ];
+
+    public function positions()
+    {
+        return $this->hasMany(Position::class,'department_id','id');
+    }
 }
