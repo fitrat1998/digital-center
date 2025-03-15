@@ -7,6 +7,11 @@ use App\Http\Requests\StoreRequestRequest;
 use App\Http\Requests\UpdateRequestRequest;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Log;
+use Vonage\Client;
+use Vonage\Client\Credentials\Basic;
+use Vonage\SMS\Message\SMS;
+
 
 class RequestController extends Controller
 {
@@ -28,6 +33,40 @@ class RequestController extends Controller
         //
     }
 
+    function sendSms($to, $message)
+    {
+        $basic = new \Vonage\Client\Credentials\Basic(env('VONAGE_KEY'), env('VONAGE_SECRET'));
+        $client = new \Vonage\Client($basic);
+
+        try {
+            $response = $client->sms()->send(
+                new \Vonage\SMS\Message\SMS($to, env('VONAGE_FROM'), $message)
+            );
+
+            \Log::info("To‘liq SMS javobi: " . json_encode($response));
+
+            if (!$response) {
+                return "API dan hech qanday javob kelmadi!";
+            }
+
+            $message = $response->current();
+
+            if (!$message) {
+                return "API javob obyektida hech narsa yo‘q!";
+            }
+
+            return $message->getStatus() == 0 ? "SMS yuborildi!" : "Xatolik: " . $message->getStatus();
+        } catch (\Exception $e) {
+            \Log::error("SMS yuborishda xatolik: " . $e->getMessage());
+            return "Xatolik: " . $e->getMessage();
+        }
+    }
+
+
+
+
+
+
 
     public function accept(Request $request)
     {
@@ -38,11 +77,19 @@ class RequestController extends Controller
                 'comment' => $request->comment,
                 'status' => 'accepted',
             ]);
-            return redirect()->back()->with('success', __('messages.requests.accept'));
+
+            $phone = preg_replace('/[^0-9]/', '', $req->phone); // Faqat raqamlarni olish
+            $phone = '+998' . substr($phone, -9); // Oxirgi 9 ta raqamni olib, oldiga 998 qo‘shish
+
+//            return $last7Digits;
+
+
+            $smsNatija = $this->sendSms($phone, 'Murojatingiz qabul qilindi');
+
+            return redirect()->back()->with('success', __('messages.requests.accept'))->with('sms_status', $smsNatija);
         }
 
-
-        return redirect()->back();
+        return redirect()->back()->with('error', 'Murojat topilmadi');
     }
 
     public function reject(Request $request)

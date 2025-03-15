@@ -64,7 +64,7 @@
                 <li class="nav-item"{{ request()->routeIs('requests.index') ? 'active' : '' }}">
                 <a href="{{ route('requests.index') }}" class="nav-link">
                     <i class="fa-solid fa-bell"></i>
-                    <span>{{ __('messages.requests.title') }}</span> <span class="badge bg-info">4</span>
+                    <span>{{ __('messages.requests.title') }}</span> <span class="badge bg-info">{{ ($count) }}</span>
                 </a>
                 </li>
 

@@ -55,7 +55,7 @@
                                     <td>{{ $request->department['name_' . app()->getLocale()] }}</td>
                                     <td class="text-center">
                                         @can('user.edit')
-                                            @if($request->exists($request->id))
+{{--                                            @if($request->exists($request->id))--}}
                                                 <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                                         data-target="#acceptModal-{{ $request->id }}">
                                                     <i class="fa-solid fa-check"></i> Qabul qilish
@@ -65,7 +65,7 @@
                                                         data-target="#rejectModal-{{ $request->id }}">
                                                     <i class="fa-solid fa-times"></i> Rad etish
                                                 </button>
-                                            @endif
+{{--                                            @endif--}}
                                         @endcan
                                     </td>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use App\Models\Request as Req;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,10 +16,22 @@ class HomeController extends Controller
         $user = auth()->user();
 
         if ($user->hasRole('super admin')) {
-            return view('adminsuper.index');
-        }
-        elseif ($user->hasRole('admin')) {
-            return view('admin.index');
+
+            $count = Req::where(function ($query) {
+                $query->whereNull('status')
+                    ->orWhere('status', 'waiting');
+            })->count();
+
+
+            return view('adminsuper.index', compact('count'));
+        } elseif ($user->hasRole('admin')) {
+
+            $count = Req::where(function ($query) {
+                $query->whereNull('status')
+                    ->orWhere('status', 'waiting');
+            })->count();
+
+            return view('admin.index', compact('count'));
         }
 
         return view('dashboard');
