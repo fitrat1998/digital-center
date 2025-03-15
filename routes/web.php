@@ -60,7 +60,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('ads', AdsController::class);
     Route::resource('positions', PositionController::class);
     Route::resource('staffs', StaffController::class);
+
+    Route::post('/requests/accept', [RequestController::class, 'accept'])->name('requests.accept');
+    Route::post('/requests/reject', [RequestController::class, 'reject'])->name('requests.reject');
     Route::resource('requests', RequestController::class);
+
     Route::resource('sliders', SliderController::class);
     Route::resource('news', NewsController::class);
     Route::resource('softwarecategories', SoftwareCategoryController::class);

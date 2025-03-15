@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Request;
+use App\Models\Request as RequestModel;
 use App\Http\Requests\StoreRequestRequest;
 use App\Http\Requests\UpdateRequestRequest;
+use Illuminate\Http\Request;
+
 
 class RequestController extends Controller
 {
@@ -13,7 +15,9 @@ class RequestController extends Controller
      */
     public function index()
     {
-        //
+        $requests = RequestModel::all();
+
+        return view('requests.index', compact('requests'));
     }
 
     /**
@@ -22,6 +26,38 @@ class RequestController extends Controller
     public function create()
     {
         //
+    }
+
+
+    public function accept(Request $request)
+    {
+        $req = RequestModel::find($request->accept_id);
+
+        if ($req) {
+            $req->update([
+                'comment' => $request->comment,
+                'status' => 'accepted',
+            ]);
+            return redirect()->back()->with('success', __('messages.requests.accept'));
+        }
+
+
+        return redirect()->back();
+    }
+
+    public function reject(Request $request)
+    {
+        $req = RequestModel::find($request->reject_id);
+
+        if ($req) {
+            $req->update([
+                'comment' => $request->comment,
+                'status' => 'rejected',
+            ]);
+            return redirect()->back()->with('danger', __('messages.requests.reject'));
+        }
+
+        return redirect()->back();
     }
 
     /**
@@ -51,7 +87,7 @@ class RequestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRequestRequest $request, Request $request)
+    public function update(UpdateRequestRequest $request, $id)
     {
         //
     }

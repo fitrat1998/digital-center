@@ -19,4 +19,9 @@ class Department extends Model
     {
         return $this->hasMany(Position::class,'department_id','id');
     }
+
+     public function requests()
+    {
+        return $this->hasMany(Request::class,'department_id','id');
+    }
 }

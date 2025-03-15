@@ -14,4 +14,10 @@ class Staff extends Model
         'photo',
         'position_id',
     ];
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class);
+    }
+
 }

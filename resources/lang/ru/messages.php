@@ -38,6 +38,26 @@ return [
     'success_staff_edit'   => 'Сотрудник успешно изменён',
     'success_staff_delete' => 'Сотрудник успешно удалён',
 
+    'success_news_add'                    => 'Новости успешно добавлены',
+    'success_news_edit'                   => 'Новости успешно отредактированы',
+    'success_news_delete'                 => 'Новости успешно удалены',
+
+    'success_ads_add'                     => 'Объявления успешно добавлены',
+    'success_ads_edit'                    => 'Объявления успешно отредактированы',
+    'success_ads_delete'                  => 'Объявления успешно удалены',
+
+    'success_category_add'                => 'Категория программ успешно добавлена',
+    'success_category_edit'               => 'Категория программ успешно отредактирована',
+    'success_category_delete'             => 'Категория программ успешно удалена',
+
+    'success_software_add'                => 'Программы успешно добавлены',
+    'success_software_edit'               => 'Программы успешно отредактированы',
+    'success_software_delete'             => 'Программы успешно удалены',
+
+    'success_slider_add'                  => 'Слайдер успешно добавлен',
+    'success_slider_edit'                 => 'Слайдер успешно отредактирован',
+    'success_slider_delete'               => 'Слайдер успешно удалён',
+
 
 
     'crud' => [
@@ -150,6 +170,8 @@ return [
             'file'          => 'Файл',
             'text'          => 'Сообщение',
             'faculty'       => 'Факультет или Организация',
+            'accept'        => 'Заявка принята',
+            'reject'        => 'Заявка отклонена',
         ],
 
         'validation' => [

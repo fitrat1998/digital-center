@@ -377,8 +377,33 @@
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <script src="{{ asset('plugins/toastr/toastr.min.js')}}"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.2.0/classic/ckeditor.js"></script>
+<script src="https://cdn.tiny.cloud/1/avkzrwv1l5m1g5pfb7ad80qz4f5mko1jjukd5k4az4imw66a/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        tinymce.init({
+            selector: '.editor',
+            height: 300,
+            plugins: [
+                'advlist autolink link image lists charmap preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table emoticons hr pagebreak',
+                'wordcount autosave directionality',
+                'template paste help'
+            ],
+            toolbar: 'undo redo | styleselect | bold italic underline strikethrough | ' +
+                     'alignleft aligncenter alignright alignjustify | ' +
+                     'bullist numlist outdent indent | link image media | ' +
+                     'forecolor backcolor emoticons | preview code fullscreen | ' +
+                     'searchreplace pagebreak hr charmap insertdatetime table',
+            menubar: 'file edit view insert format tools table help',
+            branding: false,
+            content_style: "body { font-family:Arial,sans-serif; font-size:14px; }"
+        });
+    });
+</script>
 
 
 <script src="{{ asset('plugins/my/self.js')}}"></script>
@@ -475,128 +500,25 @@
 
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    });
-
-</script>
-<script>
-    $(document).ready(function () {
-
-        var checkedStatus = $('#checkbox').attr('value');
-
-        if (checkedStatus === "on") {
-            $('#customSwitch3').prop('checked', true);
-            $('#customSwitch3Label').text('Tartib bilan');
-        } else if (checkedStatus === "off") {
-            $('#customSwitch3').prop('checked', false);
-            $('#customSwitch3Label').text('Ixtiyoriy');
-        } else {
-            $('#customSwitch3Label').text($('#customSwitch3').prop('checked') ? 'Tartib bilan' : 'Ixtiyoriy');
-        }
-
-        $('#customSwitch3').change(function () {
-            let isChecked = $('#customSwitch3').prop('checked');
-            if (isChecked) {
-                $('#customSwitch3Label').text('Tartib bilan');
-            } else {
-                $('#customSwitch3Label').text('Ixtiyoriy');
-            }
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function () {
-        $('.read-more').click(function (e) {
-            e.preventDefault();
-            var content = $(this).data('content');
-            var title = $(this).data('title');
-            $('#contentModalLabel').text(title);
-            $('#contentModal .modal-body').html(content);
-            $('#contentModal').modal('show');
-        });
-    });
-</script>
-
-<script>
-    flatpickr("#deadline", {
-        dateFormat: "d-m-Y"
-    });
-</script>
-
-<script>
-    function toggleDeadline() {
-        var deadlineSwitch = document.getElementById('deadline_switch');
-        var deadlineGroup = document.getElementById('deadlineGroup');
-        if (deadlineSwitch.checked) {
-            deadlineGroup.style.display = 'block';
-        } else {
-            deadlineGroup.style.display = 'none';
-        }
-    }
-
-    // Ensure the correct initial state
-    document.addEventListener('DOMContentLoaded', function () {
-        toggleDeadline();
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
-        $('#departmentSelect').select2();
-
-        $('#departmentSelect').on('change', function() {
-            var selectedValues = $(this).val();
-            var allDepartmentsSelected = selectedValues.includes('all_departments');
-
-            if (allDepartmentsSelected) {
-                $('#departmentSelect').val(['all_departments']).trigger('change');
-                $('#departmentSelect option').each(function() {
-                    if ($(this).val() !== 'all_departments') {
-                        $(this).prop('disabled', true).hide();
-                    }
-                });
-            } else {
-                $('#departmentSelect option').each(function() {
-                    $(this).prop('disabled', false).show();
-                });
-            }
-        });
-    });
-</script>
 
 {{--<script>--}}
-{{--    $(document).ready(function () {--}}
-{{--        $('#departmentSelect').select2();--}}
-
-{{--        $('#departmentSelect').on('change', function () {--}}
-{{--            var selectedValues = $(this).val();--}}
-{{--            var allDepartmentsSelected = selectedValues.includes('all_departments');--}}
-
-{{--            if (allDepartmentsSelected) {--}}
-{{--                $('#departmentSelect').val(['all_departments']).trigger('change');--}}
-{{--                $('#departmentSelect option').each(function () {--}}
-{{--                    if ($(this).val() !== 'all_departments') {--}}
-{{--                        $(this).prop('disabled', true);--}}
-{{--                    }--}}
-{{--                });--}}
-{{--            } else {--}}
-{{--                $('#departmentSelect option').each(function () {--}}
-{{--                    $(this).prop('disabled', false);--}}
-{{--                });--}}
-{{--            }--}}
-{{--        });--}}
+{{--    document.addEventListener("DOMContentLoaded", function () {--}}
+{{--        ClassicEditor--}}
+{{--            .create(document.querySelector('.editor'))--}}
+{{--            .then(editor => {--}}
+{{--                // CKEditor bo'yini sozlash (balandlikni to'liq o'rnatish)--}}
+{{--                editor.ui.view.editable.element.style.height = '500px';--}}
+{{--                editor.ui.view.editable.element.style.minHeight = '500px';--}}
+{{--                console.log('CKEditor yuklandi:', editor);--}}
+{{--            })--}}
+{{--            .catch(error => {--}}
+{{--                console.error('CKEditor xatosi:', error);--}}
+{{--            });--}}
 {{--    });--}}
 {{--</script>--}}
+
+
+
 
 </body>
 </html>

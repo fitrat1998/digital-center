@@ -32,7 +32,7 @@
                     <!-- /.card-header -->
                     <div class="card-body">
 
-                        <form action="{{ route('staffs.store') }}" method="post">
+                        <form action="{{ route('staffs.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -48,18 +48,18 @@
 
                             <div class="form-group">
                                 <label>{{__('messages.staffs.photo')}} </label>
-                                <input type="file" name="file"
-                                       class="form-control {{ $errors->has('file') ? "is-invalid":"" }}"
-                                       value="{{ old('file') }}" required>
-                                @if($errors->has('file'))
-                                    <span class="error invalid-feedback">{{ $errors->first('file') }}</span>
+                                <input type="file" name="photo"
+                                       class="form-control {{ $errors->has('photo') ? "is-invalid":"" }}"
+                                       value="{{ old('photo') }}" >
+                                @if($errors->has('photo'))
+                                    <span class="error invalid-feedback">{{ $errors->first('photo') }}</span>
                                 @endif
                             </div>
 
                             <div class="form-group">
                                 <label>{{ __('messages.departments.title') }}</label>
-                                <select name="department_id"
-                                        class="form-control select2 {{ $errors->has('department_id') ? 'is-invalid' : '' }}"
+                                <select name="position_id"
+                                        class="form-control select2 {{ $errors->has('position_id') ? 'is-invalid' : '' }}"
                                         required>
                                     <option value="">--</option>
                                     @foreach($positions as $position)
@@ -70,8 +70,8 @@
                                     @endforeach
                                 </select>
 
-                                @if($errors->has('department_id'))
-                                    <span class="error invalid-feedback">{{ $errors->first('department_id') }}</span>
+                                @if($errors->has('position_id'))
+                                    <span class="error invalid-feedback">{{ $errors->first('position_id') }}</span>
                                 @endif
                             </div>
 

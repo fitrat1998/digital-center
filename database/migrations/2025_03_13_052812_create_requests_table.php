@@ -16,6 +16,10 @@ return new class extends Migration {
             $table->unsignedBigInteger('department_id')->nullable();
             $table->text('text');
             $table->text('file');
+            $table->string('telegram')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('status')->nullable();
+            $table->string('comment')->nullable();
             $table->text('faculty')->nullable();
             $table->timestamps();
 

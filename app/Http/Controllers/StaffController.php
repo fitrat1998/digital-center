@@ -6,6 +6,7 @@ use App\Models\Position;
 use App\Models\Staff;
 use App\Http\Requests\StoreStaffRequest;
 use App\Http\Requests\UpdateStaffRequest;
+use Illuminate\Support\Facades\Storage;
 
 class StaffController extends Controller
 {
@@ -35,32 +36,30 @@ class StaffController extends Controller
      */
     public function store(StoreStaffRequest $request)
     {
-        dd($request);
+
 
         $request->validate([
             'fullname' => 'required|string|max:255',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'position_id' => 'required|exists:positions,id',
-        ], [
-            'fullname.required' => __('messages.validation.fullname_required'),
-            'fullname.string' => __('messages.validation.fullname_string'),
-            'fullname.max' => __('messages.validation.fullname_max'),
-
-            'photo.required' => __('messages.validation.photo_required'),
-            'photo.image' => __('messages.validation.photo_image'),
-            'photo.mimes' => __('messages.validation.photo_mimes'),
-            'photo.max' => __('messages.validation.photo_max'),
-
-            'position_id.required' => __('messages.validation.position_required'),
-            'position_id.exists' => __('messages.validation.position_exists'),
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'position_id' => 'required',
         ]);
 
+
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('staffs', 'public');
+        } else {
+            $photoPath = null;
+        }
 
         $staff = Staff::create([
             'fullname' => $request->fullname,
-            'photo' => $request->fullname,
-            'position_id' => $request->fullname,
+            'photo' => $photoPath,
+            'position_id' => $request->position_id,
         ]);
+
+
+        return redirect()->route('staffs.index')->with('success', __('messages.success_staff_add'));
+
     }
 
     /**
@@ -85,16 +84,48 @@ class StaffController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStaffRequest $request, Staff $staff)
+    public function update(UpdateStaffRequest $request, $id)
     {
-        //
+//        dd($request);
+
+        $request->validate([
+            'fullname' => 'sometimes|string|max:255',
+            'photo' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'position_id' => 'sometimes|exists:positions,id',
+        ]);
+
+        $staff = Staff::findOrFail($id);
+
+        $data = $request->only(['fullname', 'position_id']);
+
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $request->file('photo')->store('staffs', 'public');
+
+            if ($staff->photo) {
+                Storage::disk('public')->delete($staff->photo);
+            }
+        }
+
+        $staff->update($data);
+
+        return redirect()->route('staffs.index')->with('success', __('messages.success_staff_edit'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Staff $staff)
+    public function destroy($id)
     {
-        //
+        $staff = Staff::find($id);
+
+        if($staff)
+        {
+            if ($staff->photo) {
+                Storage::disk('public')->delete($staff->photo);
+            }
+            $staff->delete();
+        }
+
+        return redirect()->route('staffs.index')->with('success', __('messages.success_staff_delete'));
     }
 }

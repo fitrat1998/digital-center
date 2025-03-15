@@ -12,9 +12,9 @@ return new class extends Migration {
     {
         Schema::create('software', function (Blueprint $table) {
             $table->id();
-            $table->string('name_uz');
-            $table->string('name_en');
-            $table->string('name_ru');
+//            $table->string('name_uz');
+//            $table->string('name_en');
+//            $table->string('name_ru');
             $table->string('title_uz')->nullable();
             $table->string('title_en')->nullable();
             $table->string('title_ru')->nullable();

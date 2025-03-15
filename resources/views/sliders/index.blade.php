@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>{{__('messages.staffs.title')}}</h1>
+                    <h1>{{__('messages.sliders.name')}}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('index') }}">{{__('messages.home')}}</a></li>
-                        <li class="breadcrumb-item active">{{__('messages.staffs.title')}}</li>
+                        <li class="breadcrumb-item active">{{__('messages.sliders.name')}}</li>
                     </ol>
                 </div>
             </div>
@@ -22,9 +22,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">{{__('messages.staffs.title')}}</h3>
+                        <h3 class="card-title">{{__('messages.sliders.name')}}</h3>
                         @can('user.add')
-                            <a href="{{ route('staffs.create') }}" class="btn btn-success btn-sm float-right">
+                            <a href="{{ route('sliders.create') }}" class="btn btn-success btn-sm float-right">
                                 <span class="fas fa-plus-circle"></span>{{__('messages.crud.add')}}
                             </a>
                         @endcan
@@ -36,26 +36,43 @@
                             <tr>
                                 <th>ID</th>
 
-                                <th>{{__('messages.staffs.fullname')}}</th>
-                                <th>{{__('messages.positions.title')}}</th>
-                                <th>{{__('messages.staffs.photo')}}</th>
+                                <th>{{__('messages.sliders.title')}} - <img src="{{ asset('uz.png') }}" alt="uz"
+                                                                         width="24"></th>
+                                <th>{{__('messages.sliders.title')}} - <img src="{{ asset('en.png') }}" alt="en"
+                                                                         width="24"></th>
+                                <th>{{__('messages.sliders.title')}} - <img src="{{ asset('ru.png') }}" alt="ru"
+                                                                         width="24"></th>
+
+                                <th>{{__('messages.sliders.caption')}} - <img src="{{ asset('uz.png') }}" alt="uz"
+                                                                         width="24"></th>
+                                <th>{{__('messages.sliders.caption')}} - <img src="{{ asset('en.png') }}" alt="en"
+                                                                         width="24"></th>
+                                <th>{{__('messages.sliders.caption')}} - <img src="{{ asset('ru.png') }}" alt="ru"
+                                                                         width="24"></th>
+
+                               <th>{{__('messages.sliders.photo')}}</th>
+
                                 <th class="w-25">{{__('messages.action')}}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($staffs as $staff)
+                            @foreach($sliders as $slider)
                                 <tr>
-                                    <td>{{ $staff->id }}</td>
-                                    <td>{{ $staff->fullname }}</td>
-                                    <td>{{ $staff->position['name_' . app()->getLocale()] }}</td>
-                                    <td><img src="{{ asset('storage/' . $staff->photo) }}" alt="Staff Photo" width="100"></td>
+                                    <td>{{ $slider->id }}</td>
+                                    <td>{{ $slider->title_uz }}</td>
+                                    <td>{{ $slider->title_en }}</td>
+                                    <td>{{ $slider->title_ru }}</td>
+                                    <td>{!!  $slider->caption_uz !!}</td>
+                                    <td>{!!  $slider->caption_en !!}</td>
+                                    <td>{!!  $slider->caption_ru !!}</td>
+                                    <td><img src="{{ asset('storage/' . $slider->photo) }}" alt="Slider Photo" width="100"></td>
                                     <td class="text-center">
                                         @can('user.delete')
-                                            <form action="{{ route('staffs.destroy', $staff->id) }}" method="post">
+                                            <form action="{{ route('sliders.destroy', $slider->id) }}" method="post">
                                                 @csrf
                                                 <div class="btn-group">
                                                     @can('user.edit')
-                                                        <a href="{{ route('staffs.edit', $staff->id) }}"
+                                                        <a href="{{ route('sliders.edit', $slider->id) }}"
                                                            class="btn btn-primary btn-sm">
                                                             <i class="fa-solid fa-edit"></i>
                                                         </a>

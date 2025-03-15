@@ -10,9 +10,6 @@ class Software extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name_uz',
-        'name_en',
-        'name_ru',
         'title_uz',
         'title_en',
         'title_ru',
@@ -20,5 +17,6 @@ class Software extends Model
         'description_en',
         'description_ru',
         'photo',
+        'category_id',
     ];
 }

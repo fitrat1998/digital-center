@@ -46,9 +46,29 @@ return [
     'success_position_edit'               => 'Lavozim muvvafaqiyatli tahrirlandi',
     'success_position_delete'             => 'Lavozim muvvafaqiyatli o\'chirildi',
 
-    'success_staff_add'                => 'Xodim muvvafaqiyatli qo\'shildi',
-    'success_staff_edit'               => 'Xodim muvvafaqiyatli tahrirlandi',
-    'success_staff_delete'             => 'Xodim muvvafaqiyatli o\'chirildi',
+    'success_staff_add'                   => 'Xodim muvvafaqiyatli qo\'shildi',
+    'success_staff_edit'                  => 'Xodim muvvafaqiyatli tahrirlandi',
+    'success_staff_delete'                => 'Xodim muvvafaqiyatli o\'chirildi',
+
+    'success_news_add'                    => 'Yangliklar muvvafaqiyatli qo\'shildi',
+    'success_news_edit'                   => 'Yangliklar muvvafaqiyatli tahrirlandi',
+    'success_news_delete'                 => 'Yangliklar muvvafaqiyatli o\'chirildi',
+
+    'success_ads_add'                     => 'E`lonlar muvvafaqiyatli qo\'shildi',
+    'success_ads_edit'                    => 'E`lonlar muvvafaqiyatli tahrirlandi',
+    'success_ads_delete'                  => 'E`lonlar muvvafaqiyatli o\'chirildi',
+
+    'success_category_add'                => 'Dasturlar kategoriyasi muvvafaqiyatli qo\'shildi',
+    'success_category_edit'               => 'Dasturlar kategoriyasi muvvafaqiyatli tahrirlandi',
+    'success_category_delete'             => 'Dasturlar kategoriyasi muvvafaqiyatli o\'chirildi',
+
+    'success_software_add'                => 'Dasturlar  muvvafaqiyatli qo\'shildi',
+    'success_software_edit'               => 'Dasturlar  muvvafaqiyatli tahrirlandi',
+    'success_software_delete'             => 'Dasturlar  muvvafaqiyatli o\'chirildi',
+
+    'success_slider_add'                  => 'Slayder  muvvafaqiyatli qo\'shildi',
+    'success_slider_edit'                 => 'Slayder  muvvafaqiyatli tahrirlandi',
+    'success_slider_delete'               => 'Slayder  muvvafaqiyatli o\'chirildi',
 
     'crud' => [
         'add'    => 'Qo\'shish',
@@ -160,6 +180,8 @@ return [
         'file'          => 'Fayl',
         'text'          => 'Xabar',
         'faculty'       => 'Fakultet yoki Tashkilot',
+        'accept'        => 'Murojat qabul qilindi',
+        'reject'        => 'Murojat rad qilindi',
     ],
 
 
